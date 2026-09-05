@@ -1,0 +1,2 @@
+# Simpan semua berkas teks dengan akhiran baris LF, sesuai .editorconfig.
+* text=auto eol=lf

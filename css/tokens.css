@@ -1,0 +1,89 @@
+/* ============================================================
+   Design token — sumber tunggal untuk warna, radius, dan font.
+   Dark-first: nilai di :root adalah tema gelap, lalu ditimpa
+   oleh preferensi sistem dan oleh atribut [data-theme] manual.
+   ============================================================ */
+
+:root {
+  --bg: #070a12;
+  --bg-elevated: #0d1220;
+  --surface: #131a2b;
+  --surface-2: #1a2338;
+  --border: #262f4a;
+
+  --text: #eef1f8;
+  --text-muted: #9aa3bd;
+  --text-dim: #5c6688;
+  --code: #b7c2e6;
+
+  --accent: #8b7bff;
+  --accent-2: #2fd8f0;
+  --accent-warm: #ff6f9c;
+
+  --shadow: 0 20px 60px -20px rgba(4, 6, 16, 0.6);
+
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+
+  --font-display: 'Unbounded', 'Segoe UI', sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  /* dipakai .theme-toggle untuk menentukan ikon mana yang tampil */
+  --icon-sun: inline;
+  --icon-moon: none;
+}
+
+/* Tema terang mengikuti sistem, kecuali pengguna sudah memilih gelap. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #f4f5fb;
+    --bg-elevated: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #eef0fa;
+    --border: #dde1f0;
+
+    --text: #12172a;
+    --text-muted: #535d79;
+    --text-dim: #828da8;
+    --code: #3c4470;
+
+    --accent: #5a43e0;
+    --accent-2: #0a8aa0;
+    --accent-warm: #c8306e;
+
+    --shadow: 0 20px 50px -25px rgba(30, 35, 70, 0.18);
+
+    --icon-sun: none;
+    --icon-moon: inline;
+  }
+}
+
+/* Pilihan manual lewat tombol tema selalu menang. */
+:root[data-theme='light'] {
+  --bg: #f4f5fb;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #eef0fa;
+  --border: #dde1f0;
+
+  --text: #12172a;
+  --text-muted: #535d79;
+  --text-dim: #828da8;
+  --code: #3c4470;
+
+  --accent: #5a43e0;
+  --accent-2: #0a8aa0;
+  --accent-warm: #c8306e;
+
+  --shadow: 0 20px 50px -25px rgba(30, 35, 70, 0.18);
+
+  --icon-sun: none;
+  --icon-moon: inline;
+}
+
+:root[data-theme='dark'] {
+  --icon-sun: inline;
+  --icon-moon: none;
+}
