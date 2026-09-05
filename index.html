@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portofolio Jinny — System Analyst, Web Developer, dan QA."
+    />
+    <title>jinny.dev</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/reactbits.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+
+    <!-- Three.js dipakai latar hero. Import map ini yang membuat
+         `import('three')` di js/particle-network.js bisa diselesaikan
+         tanpa bundler. -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+        }
+      }
+    </script>
+
+    <!-- Three.js dimuat lewat import dinamis di dalam particle-network.js
+         supaya tidak menahan modul lain. Baris ini menyuruh browser mulai
+         mengunduhnya lebih awal, sejajar dengan berkas halaman. -->
+    <link
+      rel="modulepreload"
+      href="https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+      crossorigin
+    />
+
+    <script type="module" src="js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- lapisan latar dekoratif; tidak membawa informasi -->
+    <div class="bg-fx" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-blob b1"></div>
+      <div class="bg-blob b2"></div>
+      <div class="bg-spot" id="bg-spot"></div>
+    </div>
+
+    <div class="page">
+      <header class="nav">
+        <div class="nav-row">
+          <a href="#top" class="logo">// <span>jinny</span></a>
+
+          <nav class="links">
+            <a href="#tentang">Tentang</a>
+            <a href="#keahlian">Keahlian</a>
+            <a href="#proyek">Proyek</a>
+            <a href="#kontak">Kontak</a>
+          </nav>
+
+          <div class="nav-cta">
+            <button
+              type="button"
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Ganti tema terang/gelap"
+            >
+              <svg
+                class="icon-sun"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="4"></circle>
+                <path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                ></path>
+              </svg>
+              <svg
+                class="icon-moon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+              </svg>
+            </button>
+
+            <a class="btn btn-primary" href="#kontak">Hubungi Saya</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <!-- ============ Hero ============ -->
+        <section class="hero">
+          <!-- latar jaring partikel, digambar js/particle-network.js -->
+          <div class="hero-canvas-wrap canvas-layer" id="hero-canvas" aria-hidden="true"></div>
+
+          <div class="container hero-inner">
+            <span class="eyebrow">System Analyst &middot; Web Developer &middot; QA</span>
+
+            <!-- React Bits: SplitText, lalu GradientText pada kata ke-1 dan ke-5.
+                 Teksnya sengaja ditulis di HTML, bukan di JavaScript, supaya
+                 tetap terbaca mesin pencari dan pembaca layar. -->
+            <h1 id="hero-heading">Merancang sistem yang rapi, membangun web yang solid.</h1>
+
+            <p class="sub" data-animated-content>
+              Saya Jinny &mdash; menerjemahkan kebutuhan bisnis menjadi spesifikasi yang
+              jelas, membangun antarmuka web yang rapi, lalu mengujinya sampai
+              benar-benar siap sebelum rilis.
+            </p>
+
+            <div class="hero-cta" data-animated-content data-ac-delay="0.1">
+              <a class="btn btn-primary" href="#proyek">Lihat Proyek</a>
+              <a class="btn btn-ghost" href="#kontak">Hubungi Saya</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Tentang ============ -->
+        <section id="tentang">
+          <div class="container">
+            <div class="about-grid">
+              <div class="avatar" data-animated-content><span>JN</span></div>
+
+              <div data-animated-content data-ac-delay="0.1">
+                <div class="kicker">Tentang saya</div>
+
+                <div class="terminal" style="margin-top: 14px">
+                  <div class="terminal-bar">
+                    <i></i><i></i><i></i><span>profil.sh</span>
+                  </div>
+
+                  <div class="terminal-body">
+                    <div class="line"><span class="prompt">$</span> whoami</div>
+                    <p>
+                      Jinny &mdash; System Analyst, Web Developer, sekaligus QA dengan
+                      level pengalaman menengah (intermediate).
+                    </p>
+
+                    <div class="line"><span class="prompt">$</span> cat fokus.txt</div>
+                    <p>
+                      Suka menjembatani kebutuhan tim bisnis dengan tim teknis: mulai
+                      dari menyusun requirement dan alur sistem, membangun antarmukanya,
+                      sampai memastikan setiap fitur sudah diuji dan bebas dari bug
+                      sebelum dipakai pengguna.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Keahlian ============ -->
+        <section id="keahlian">
+          <div class="container">
+            <div class="section-head" data-animated-content>
+              <div class="kicker">Keahlian</div>
+              <h2>Dari analisis sampai quality assurance</h2>
+              <p>
+                Empat area yang saya kerjakan sehari-hari, dari memahami kebutuhan
+                sampai memastikan hasil akhirnya benar-benar berfungsi.
+              </p>
+            </div>
+
+            <!-- Tiap kartu memakai tiga komponen sekaligus:
+                 AnimatedContent (masuk saat di-scroll), SpotlightCard (sorot
+                 mengikuti kursor), dan TiltedCard (miring 3D saat hover). -->
+            <div class="skills-grid">
+              <div class="card-spotlight skill-card" data-animated-content data-spotlight data-tilt>
+                <span class="skill-tag">SYS</span>
+                <h3 class="skill-title">Analisis Sistem</h3>
+                <p class="skill-desc">
+                  Requirement gathering, flow &amp; use case diagram, dokumentasi SRS
+                  untuk kebutuhan yang jelas dan terukur.
+                </p>
+                <div class="skill-bar"><div class="skill-bar-fill" data-level="72"></div></div>
+                <div class="skill-level">Menengah &middot; 72%</div>
+              </div>
+
+              <div
+                class="card-spotlight skill-card"
+                data-animated-content
+                data-ac-delay="0.08"
+                data-spotlight
+                data-tilt
+              >
+                <span class="skill-tag">WEB</span>
+                <h3 class="skill-title">Pengembangan Web</h3>
+                <p class="skill-desc">
+                  HTML, CSS, JavaScript, serta integrasi API untuk membangun antarmuka
+                  yang responsif dan enak dipakai.
+                </p>
+                <div class="skill-bar"><div class="skill-bar-fill" data-level="70"></div></div>
+                <div class="skill-level">Menengah &middot; 70%</div>
+              </div>
+
+              <div
+                class="card-spotlight skill-card"
+                data-animated-content
+                data-ac-delay="0.16"
+                data-spotlight
+                data-tilt
+              >
+                <span class="skill-tag">QA</span>
+                <h3 class="skill-title">Quality Assurance</h3>
+                <p class="skill-desc">
+                  Manual &amp; exploratory testing, penyusunan test case, serta
+                  pelacakan bug dari laporan sampai rilis ulang.
+                </p>
+                <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+                <div class="skill-level">Menengah &middot; 75%</div>
+              </div>
+
+              <div
+                class="card-spotlight skill-card"
+                data-animated-content
+                data-ac-delay="0.24"
+                data-spotlight
+                data-tilt
+              >
+                <span class="skill-tag">OPS</span>
+                <h3 class="skill-title">Tools &amp; Kolaborasi</h3>
+                <p class="skill-desc">
+                  Git, Figma, dan papan kerja seperti Trello/Jira untuk menjaga
+                  dokumentasi dan progres tim tetap rapi.
+                </p>
+                <div class="skill-bar"><div class="skill-bar-fill" data-level="68"></div></div>
+                <div class="skill-level">Menengah &middot; 68%</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Proyek ============ -->
+        <section id="proyek">
+          <div class="container">
+            <div class="section-head" data-animated-content>
+              <div class="kicker">Proyek</div>
+              <h2>Beberapa hal yang sedang &amp; pernah saya kerjakan</h2>
+              <p>
+                Contoh proyek di bawah ini &mdash; ganti dengan studi kasus dan tautan
+                proyek Anda sendiri.
+              </p>
+            </div>
+
+            <!-- data-caption mengaktifkan tooltip bawaan TiltedCard -->
+            <div class="projects-grid">
+              <div
+                class="card-spotlight project-card"
+                data-animated-content
+                data-spotlight="accent"
+                data-tilt
+                data-caption="Jinot Bakehouse"
+              >
+                <div class="project-tags">
+                  <span class="pill featured">Analisis Sistem</span>
+                  <span class="pill">Web App</span>
+                  <span class="pill">Inventori</span>
+                </div>
+                <h3>Jinot Bakehouse &mdash; Sistem Manajemen Stok &amp; Pesanan</h3>
+                <p class="desc">
+                  Aplikasi untuk mencatat stok bahan baku, mengelola pesanan kue, dan
+                  merangkum laporan penjualan Jinot Bakehouse dalam satu dashboard.
+                </p>
+                <a class="project-link" href="#">Lihat detail &rarr;</a>
+              </div>
+
+              <div
+                class="card-spotlight project-card"
+                data-animated-content
+                data-ac-delay="0.08"
+                data-spotlight="accent"
+                data-tilt
+                data-caption="Portal Klien"
+              >
+                <div class="project-tags">
+                  <span class="pill">UI/UX</span>
+                  <span class="pill">Front-End</span>
+                  <span class="pill">Dashboard</span>
+                </div>
+                <h3>Redesain Dashboard Portal Klien</h3>
+                <p class="desc">
+                  Merancang ulang tampilan dashboard agar klien lebih mudah melacak
+                  status pesanan dan riwayat transaksi secara real-time.
+                </p>
+                <a class="project-link" href="#">Lihat detail &rarr;</a>
+              </div>
+
+              <div
+                class="card-spotlight project-card"
+                data-animated-content
+                data-ac-delay="0.16"
+                data-spotlight="accent"
+                data-tilt
+                data-caption="QA Checkout"
+              >
+                <div class="project-tags">
+                  <span class="pill">QA</span>
+                  <span class="pill">Test Case</span>
+                  <span class="pill">Regresi</span>
+                </div>
+                <h3>Rangkaian Pengujian Checkout &amp; Pembayaran</h3>
+                <p class="desc">
+                  Menyusun skenario pengujian dan checklist QA untuk alur checkout agar
+                  setiap rilis lebih stabil dan minim regresi.
+                </p>
+                <a class="project-link" href="#">Lihat detail &rarr;</a>
+              </div>
+            </div>
+
+            <div class="project-note" data-animated-content>
+              // contoh proyek &mdash; mockup ini siap diisi dengan portofolio nyata Anda
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Kontak ============ -->
+        <section id="kontak">
+          <div class="container">
+            <div class="contact-card" data-animated-content>
+              <div>
+                <!-- React Bits: GradientText -->
+                <h2>Mari <span id="grad-terhubung">terhubung</span></h2>
+                <p>
+                  Terbuka untuk kolaborasi proyek web, kebutuhan analisis sistem, atau
+                  bantuan QA sebelum rilis produk Anda.
+                </p>
+                <div class="prompt-box">
+                  <span class="prompt">$</span>kontak --email hai@jinny.dev<span
+                    class="cursor"
+                  ></span>
+                </div>
+              </div>
+
+              <div class="social-row">
+                <a class="btn btn-ghost" href="#">Email</a>
+                <a class="btn btn-ghost" href="#">GitHub</a>
+                <a class="btn btn-ghost" href="#">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-row">
+          <span>&copy; 2026 Jinny &mdash; Portofolio pribadi (mockup)</span>
+          <span>Three.js &amp; komponen React Bits (port vanilla)</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
