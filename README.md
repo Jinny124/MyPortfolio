@@ -107,6 +107,10 @@ Semuanya ditandai komentar di berkas terkait:
   Berkasnya sekitar satu megabita; kalau di-import statis, seluruh modul
   halaman menunggu unduhannya selesai dan animasi teks baru mulai beberapa
   detik kemudian.
+- `onceInView()` di `utils.js` memasang pemeriksaan viewport manual sebagai
+  cadangan IntersectionObserver. Sebagian browser tidak mengirim callback
+  observer selama tab belum pernah ditampilkan, dan tanpa cadangan itu isi
+  halaman bisa tertinggal pada `opacity 0`.
 
 ---
 
@@ -132,10 +136,6 @@ hanya rotasi grupnya. Nilai yang biasa disetel:
 
 Warnanya diambil dari `PALETTES` di `js/theme.js` (`point` dan `line`), jadi
 ikut berganti saat tema diubah.
-- `onceInView()` di `utils.js` memasang pemeriksaan viewport manual sebagai
-  cadangan IntersectionObserver. Sebagian browser tidak mengirim callback
-  observer selama tab belum pernah ditampilkan, dan tanpa cadangan itu isi
-  halaman bisa tertinggal pada `opacity 0`.
 
 ---
 
